@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous"> -->
+</head>
+<style>
+    img {
+        width: 100%;
+        overflow: hidden;
+        margin-top: -10px;
+    }
+
+    .timer {
+        text-align: center;
+    }
+
+    .timer-text {
+        text-align: center;
+        color: grey;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        /* fle */
+    }
+
+    #time {
+        font-weight: bold;
+        font-size: 22px;
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="image">
+            <img src="./resized2.png" alt="">
+        </div>
+        <div class="timer">
+            <div class="timer-text"> This offer expires in </div>
+            <div class="flex timer-text">
+                <span class="timer-text">
+                    <i class="far fa-clock fa-2x" aria-hidden="true"></i>
+                </span>
+                <div id="time">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
+    crossorigin="anonymous"></script>
+<script>
+    function startTimer(duration, display) {
+        var timer = duration,
+            minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.textContent = minutes + ":" + seconds;
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+    window.onload = function () {
+        var fiveMinutes = 60 * 5,
+            display = document.querySelector('#time');
+        startTimer(fiveMinutes, display);
+    };
+</script>
