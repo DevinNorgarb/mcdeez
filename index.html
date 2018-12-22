@@ -18,6 +18,9 @@
         /* margin-right: -10px; */
         margin-left: -10px;
         margin-top: -10px;
+        position: relative;
+        text-align: center;
+        color: white;
     }
 
     .timer {
@@ -43,12 +46,34 @@
         font-size: 22px;
         margin-left: 10px;
     }
+
+    .top-right-day {
+        position: absolute;
+        top: 38%;
+        right: 20%;
+        font-size: 80px;
+        color: white;
+        font-weight: 900;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .top-right-mon {
+        position: absolute;
+        top: 47%;
+        right: 20%;
+        color: white;
+        font-weight: 600;
+        font-size: 40px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
 </style>
 
 <body>
     <div class="container">
         <div class="image">
             <img src="./resixed-perfect.png" alt="">
+            <div class="top-right-day">22</div>
+            <div class="top-right-mon">DEC</div>
         </div>
         <div class="timer">
             <div class="timer-text"> This offer expires in </div>
