@@ -6,16 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    <script src="main.js"></script>
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
-        crossorigin="anonymous"> -->
 </head>
 <style>
     img {
+        top: 0;
         width: 100%;
         overflow: hidden;
-        /* margin-right: -10px; */
+        margin-right: -10px;
         margin-left: -10px;
         margin-top: -10px;
         position: relative;
@@ -49,29 +46,75 @@
 
     .top-right-day {
         position: absolute;
-        top: 38%;
-        right: 20%;
+        -->top: 45%;
+        margin-left: 220px;
+        margin-right: 20%;
         font-size: 80px;
         color: white;
         font-weight: 900;
+        vertical-align: middle;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
     .top-right-mon {
         position: absolute;
-        top: 47%;
-        right: 20%;
+        /* top: 40%; */
+        /* right: 20%; */
+        text-align: center;
         color: white;
         font-weight: 600;
         font-size: 40px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
+
+    .image {
+        /* width: 100%; */
+        width: 380px;
+        height: auto;
+        margin-left: -20px;
+        text-align: center;
+        position: relative;
+    }
+
+    .top-right-day {
+        position: absolute;
+        /* margin: auto; */
+        margin-right: 51px;
+        margin-top: 280px;
+        /* margin-top: 300px; */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: #fff;
+        height: 100px;
+    }
+
+    .top-right-mon {
+        position: absolute;
+        margin-right: 40px;
+        /* margin: auto; */
+        margin-left: 200px;
+        margin-top: 355px;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        color: #fff;
+        height: 100px;
+    }
 </style>
 
 <body>
+    <script id="__bs_script__">
+        //<![CDATA[
+        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.0'><\/script>".replace(
+            "HOST", location.hostname));
+        //]]>
+    </script>
     <div class="container">
         <div class="image">
-            <img src="./resixed-perfect.png" alt="">
+            <img height="" width="" src="./resixed-perfect.png" alt="">
             <div class="top-right-day">23</div>
             <div class="top-right-mon">DEC</div>
         </div>
