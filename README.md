@@ -1,6 +1,8 @@
 ## free-mc-dees
 
 ![alt text](https://mcdees.devswebdev.com/resized2.png "McDees free burger clone screen")
+![alt text](https://mcdees.devswebdev.com/with-timer.png "With timer")
+
 
 Clone of Mc Donalds app promo screen. Present this screen at your nearest McDees and only pay 90c (ZAR) for a burger  
 # South Africa only
