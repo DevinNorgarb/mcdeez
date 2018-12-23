@@ -1,4 +1,4 @@
-## free-mc-dees
+# Free (Nearly) Mc Dee's
 
 ![alt text](https://mcdees.devswebdev.com/resized2.png "McDees free burger clone screen")
 ![alt text](https://mcdees.devswebdev.com/with-timer.png "With timer")
