@@ -8,31 +8,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <style>
-    /* img {
-        top: 0;
-width: 100%;
-        overflow: hidden;
-        margin-right: -10px;
-        margin-left: -10px;
-        margin-top: -10px;
-        position: relative;
-        text-align: center;
-        color: white;
-    } */
     img {
+        margin-top: -20px;
         width: 100%;
         display: block;
     }
 
     .top-right-day {
         position: absolute;
-        top: 49%;
+        top: 51%;
         left: 71%;
         transform: translate(-50%, -50%);
         text-align: center;
         color: white;
         font-weight: bold;
-        font-size: 80px;
+        font-size: 75px;
         color: white;
         font-weight: 900;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -40,17 +30,13 @@ width: 100%;
 
     .top-right-mon {
         position: absolute;
-        top: 57%;
+        top: 59%;
         left: 71%;
         transform: translate(-50%, -50%);
         text-align: center;
         color: white;
         font-weight: bold;
-        /* font-size: 80px; */
         color: white;
-        /* font-weight: 900; */
-        /* font-family: Verdana, Geneva, Tahoma, */
-        /* sans-serif; */
         font-weight: 600;
         font-size: 40px;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -64,77 +50,31 @@ width: 100%;
 
     .timer-text {
         text-align: center;
-        color: grey;
+        font-weight: normal;
+        color: #6C6C6C;
     }
 
     .flex {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        /* fle */
     }
 
     #time {
-        font-weight: bold;
-        font-size: 22px;
+        color: #505050;
+        font-weight: normal;
+        font-size: 19px;
+        margin-top: 5px;
         margin-left: 10px;
     }
 
-    /* .top-right-day {
-        position: absolute;
-        top: 45%;
-        margin-left: 220px;
-        margin-right: 20%;
-        font-size: 80px;
-        color: white;
-        font-weight: 900;
-        vertical-align: middle;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    } */
-    /* .top-right-mon {
-        position: absolute; */
-    /* top: 40%; */
-    /* right: 20%; */
-    /* text-align: center;
-        color: white;
-        font-weight: 600;
-        font-size: 40px;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-    } */
     .image {
         width: 110%;
-        /* width: 100vw; */
         height: auto;
         margin-left: -20px;
         text-align: center;
         position: relative;
     }
-
-    /*
-    .top-right-day {
-        position: absolute;
-        margin-right: 51px;
-        margin-top: 280px;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        color: #fff;
-        height: 100px;
-    }
-
-    .top-right-mon {
-        position: absolute;
-        margin-right: 40px;
-        margin-left: 200px;
-        margin-top: 355px;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        color: #fff;
-        height: 100px;
-    } */
 </style>
 
 <body>
@@ -147,8 +87,8 @@ width: 100%;
     <div class="container">
         <div class="image">
             <img height="" width="" src="./resixed-perfect.png" alt="">
-            <div class="top-right-day">23</div>
-            <div class="top-right-mon">DEC</div>
+            <div id="day" class="top-right-day">23</div>
+            <div id="mon" class="top-right-mon">DEC</div>
         </div>
         <div class="timer">
             <div class="timer-text"> This offer expires in </div>
@@ -167,6 +107,14 @@ width: 100%;
 <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
     crossorigin="anonymous"></script>
 <script>
+    let today = new Date()
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+        "November", "December"
+    ];
+    var formattedMonth = months[today.getMonth()].substr(0, 3)
+    document.getElementById('day').innerHTML = today.getDate();
+    document.getElementById('mon').innerHTML = formattedMonth.toLocaleUpperCase();
+
     function startTimer(duration, display) {
         var timer = duration,
             minutes, seconds;
