@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<style>
+    img {
+        /* margin-top: -20px; */
+        width: 100%;
+        display: block;
+    }
+
+    .top-right-day {
+        position: absolute;
+        top: 31%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px;
+        color: black;
+        font-weight: 900;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .top-right-mon {
+        position: absolute;
+        top: 35%;
+        left: 75%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-weight: bold;
+        color: black;
+        font-weight: 600;
+        font-size: 20px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .timer {
+        text-align: center;
+        margin-top: 5px;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .timer-text {
+        text-align: center;
+        font-weight: normal;
+        color: #6C6C6C;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    #time {
+        color: #505050;
+        font-weight: normal;
+        font-size: 19px;
+        margin-top: 5px;
+        margin-left: 10px;
+    }
+
+    .image {
+        width: 125%;
+        height: auto;
+        /* margin-left: 5px; */
+        text-align: center;
+        position: relative;
+    }
+
+    .progress-bar {
+        position: absolute;
+        top: 84%;
+        left: 0%;
+        /* transform: translate(-50%, -50%); */
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        color: white;
+        font-weight: 600;
+        font-size: 40px;
+        font-family: Verdana, Geneva, Tahoma,
+            sans-serif;
+        width: 100%;
+        height: 5px;
+        background-color: #fec63d;
+        border-radius: 5px;
+        z-index: 10;
+    }
+
+    .progress-bar-underlay {
+            position: absolute;
+            top: 84%;
+        left: 0%;
+        /* transform: translate(-50%, -50%); */
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        color: white;
+        font-weight: 600;
+        font-size: 40px;
+        font-family: Verdana, Geneva, Tahoma,
+            sans-serif;
+        width: 500px;
+        height: 5px;
+        background-color: #8a6e51;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <script id="__bs_script__">
+        //<![CDATA[
+        document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.26.0'><\/script>".replace(
+            "HOST", location.hostname));
+        //]]>
+    </script>
+    <div class="container">
+        <div class="image">
+            <img height="" width="" src="./tidy.png" alt="">
+            <div id="day" class="top-right-day">23</div>
+            <div id="mon" class="top-right-mon">DEC</div>
+        </div>
+<div id="progress-bar" class="progress-bar">
+            <div class="w3-light-grey w3-tiny">
+                <div class="w3-container" style="background-color: #fec63d " ></div>
+            </div>
+        </div>
+        <div class="progress-bar-underlay">
+            <div class="w3-light-grey w3-tiny">
+                <div class="w3-container" style="background-color: #fec63d " style="width:100%"></div>
+            </div>
+        </div>
+        <div class="timer">
+            <div class="timer-text"> This offer expires in </div>
+            <div class="flex timer-text">
+                <span class="timer-text">
+                    <i class="far fa-clock fa-2x" aria-hidden="true"></i>
+                </span>
+                <div id="time">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+<script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js" integrity="sha384-EIHISlAOj4zgYieurP0SdoiBYfGJKkgWedPHH4jCzpCXLmzVsw1ouK59MuUtP4a1"
+    crossorigin="anonymous"></script>
+<script>
+    let today = new Date()
+    var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October",
+        "November", "December"
+    ];
+    var formattedMonth = months[today.getMonth()].substr(0, 3)
+    document.getElementById('day').innerHTML = padDate()
+    document.getElementById('mon').innerHTML = formattedMonth.toLocaleUpperCase();
+
+    function padDate() {
+        if (today.getDate() < 10) {
+            return "0" + today.getDate()
+        }
+        return today.getDate()
+    }
+
+    function startTimer(duration, display) {
+        var timer = duration,
+            minutes, seconds;
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.textContent = minutes + ":" + seconds;
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+
+    function loadProgress(duration, display) {
+        var timer = duration,
+            minutes, seconds;
+        var progressSeconds = 0
+        setInterval(function () {
+            minutes = parseInt(timer / 60, 10)
+            seconds = parseInt(timer % 60, 10);
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+            display.textContent = minutes + ":" + seconds;
+            calcProgress(progressSeconds++)
+            if (--timer < 0) {
+                timer = duration;
+            }
+        }, 1000);
+    }
+
+    function calcProgress(seconds) {
+        console.log(seconds);
+        var total = 60 * 5;
+        var  progresspercent= seconds / total * 100 ;
+        document.getElementById('progress-bar').style.width = progresspercent + "%";
+    }
+    window.onload = function () {
+        var fiveMinutes = 60 * 5,
+            display = document.querySelector('#time');
+        startTimer(fiveMinutes, display);
+        loadProgress(fiveMinutes, display);
+    };
+</script>
