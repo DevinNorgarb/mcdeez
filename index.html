@@ -639,6 +639,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
 <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
 <script src="https://unpkg.com/@asymmetrik/leaflet-d3@4/dist/leaflet-d3.js" charset="utf-8"></script>
+<script src="data2.js"></script>
 
 
 <script>
@@ -675,7 +676,7 @@ var generateData = function(){
     for(i=0; i<1000; i++){
         data.push([longFn(),  latFn()]);
     }
-    console.log(data);
+    console.log(data2);
     
     hexLayer.data(data);
 };
