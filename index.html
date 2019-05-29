@@ -632,8 +632,7 @@
 </style>
 
 
-<div id="map" style="width: 600px; height: 400px; border: 1px solid #ccc"></div>
-<button onclick="generateData()">Generate Data</button>
+<div id="map" style="width: 1200px; height: 800px; border: 1px solid #ccc"></div>
 
 <script src="https://d3js.org/d3.v5.min.js" charset="utf-8"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.4.0/leaflet.js"></script>
@@ -646,12 +645,18 @@
 
 var center = [-26.2309,28.0583 ];
 
-	
+var CartoDB_DarkMatter = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 19
+});
+
+
 var osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
     osmAttrib = '&copy; <a href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     osm = L.tileLayer(osmUrl, {maxZoom: 18, attribution: osmAttrib});
 
-map = new L.Map('map', {layers: [osm], center: new L.LatLng(center[0], center[1]), zoom: 7});
+map = new L.Map('map', {layers: [CartoDB_DarkMatter], center: new L.LatLng(center[0], center[1]), zoom: 7});
 
 var options = {
     radius : 12,
