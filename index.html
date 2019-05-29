@@ -673,9 +673,11 @@ var longFn = d3.randomNormal(center[1], 1);
 
 var generateData = function(){
     var data = [];
-    for(i=0; i<1000; i++){
-        data.push([longFn(),  latFn()]);
-    }
+
+	
+	for (key in temp1){
+data.push([temp1[key][0], temp1[key][1]] )
+}
     console.log(data2);
     
     hexLayer.data(data);
