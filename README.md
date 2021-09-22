@@ -1,7 +1,7 @@
 # Free (Nearly) Mc Dee's
 
-![alt text](https://github.com/DevinNorgarb/mcdeez/blob/dd25a24e20438927b37b4dfbdabc9b1c79d4a3ce/Screenshot_20181222-232608_McDonald's.jpg "McDees free burger clone screen")
-![alt text](https://github.com/DevinNorgarb/mcdeez/blob/dd25a24e20438927b37b4dfbdabc9b1c79d4a3ce/Screenshot_20181222-232616_McDonald's.jpg "With timer")
+[<img src="https://github.com/DevinNorgarb/mcdeez/blob/dd25a24e20438927b37b4dfbdabc9b1c79d4a3ce/Screenshot_20181222-232608_McDonald's.jpg" width="250"/>](McDees free burger clone screen)
+[<img src="https://github.com/DevinNorgarb/mcdeez/blob/dd25a24e20438927b37b4dfbdabc9b1c79d4a3ce/Screenshot_20181222-232616_McDonald's.jpg" width="250"/>](With timer)
 
 
 Clone of Mc Donalds app promo screen. Present this screen at your nearest McDees and only pay 90c (ZAR) for a burger  
